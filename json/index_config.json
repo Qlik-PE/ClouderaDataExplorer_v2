@@ -1,0 +1,32 @@
+{
+  "items": [
+	{
+      "path": "qdc-cloudera.html",
+      "color": "color1",
+      "icon": "fa-magic",
+      "picture": "img/data-art.png",
+      "headline": "Cloudera",
+      "launch": "Connect to Hadoop",
+      "description": "<p>OnDemand data aquisition</p><p>based on Hadoop</p>"
+    },
+    {
+      "path": "",
+      "color": "color3",
+      "icon": "fa-star",
+      "picture": "img/QlikLogo-RGB.jpg",
+      "headline": "Your Usecase here",
+      "launch": "Start your usecase",
+      "description": "<p>insert additional Usecases here</p>"
+    },
+    {
+      "path": "qdc-cloudera-beta.html",
+      "color": "color2",
+      "icon": "fa-bolt",
+      "picture": "img/cde.png",
+      "headline": "Cloudera Data Explorer",
+      "launch": "Launch CDE",
+      "description": "<p>Ad-Hoc data lake browser</p>"
+    }
+	
+  ]
+}

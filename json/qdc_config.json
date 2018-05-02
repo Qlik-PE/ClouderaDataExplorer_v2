@@ -1,0 +1,14 @@
+{
+	"config":{
+		"general":{
+			"folder":"DataConciergev21",
+			"connect":"https://cloudera.qlik.com/ticket/sense/app/"
+		},	
+		"cloudera":{
+			"app_name": "Cloudera Data Catalog.qvf",
+			"scenario": "Cloudera Data Explorer",			
+			"appid":"b43c28bc-2541-4087-b17b-7df9954cc39c",
+			"namespace":"Cloudera_"
+		}
+	}
+}
