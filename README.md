@@ -15,7 +15,7 @@ This software is released "AS-IS", but welcome improvements to the base code as 
 1. Download the contents (or do the magical gitgub repository desktop thingy) into a folder on you Qlik Sense server.
 2. Nav to Install Drive (I'll use C: for example) of Qlik Sense [c:\program files\qlik\sense\client] and unzip/create a folder for DataConciergev21
 ![alt text](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/install%20directory%20CDE.png "Install Image1")
-3. There are 4 files that need to be edited to match your Qlik Sense environment
+3. There are 4 files that need to be edited to match your Qlik Sense environment  
   - index.js, qdc-cloudera-beta.js, index_config.json, and qdc_config.json
   - first two are in root dir, next two are in \json dir
 4. Index.js: This config matches the index.html landing page... Adjust ports to match (default is port 80), as well as Qlik Sense proxy (a secondary 'ticket' proxy is shown)
