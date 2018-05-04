@@ -1,4 +1,4 @@
-Alt-H1 ClouderaDataExplorer_v2
+#Alt-H1 ClouderaDataExplorer_v2
 Bardess coded updated build of CDE.
 
 This is the "GA" of the Cloudera Data Explorer based off the Data Concierge platform developed by Dennis Jaskowiak and Qlik DACH SA team.
