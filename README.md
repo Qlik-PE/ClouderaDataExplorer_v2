@@ -11,7 +11,7 @@ This software is released "AS-IS", but welcome improvements to the base code as 
 
 # Contents & What to do...
 
-##Setup: 
+## Setup: 
 
 1. Download the contents (or do the magical gitgub repository desktop thingy) into a folder on you Qlik Sense server.
 
