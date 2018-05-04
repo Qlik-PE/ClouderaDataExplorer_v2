@@ -20,7 +20,6 @@ This software is released "AS-IS", but welcome improvements to the base code as 
 
 3. There are 4 files that need to be edited to match your Qlik Sense environment  
   * index.js, qdc-cloudera-beta.js, index_config.json, and qdc_config.json, first two files are in root dir, next two are in \json dir  
-
 4. Index.js: This config matches the index.html landing page... Adjust ports to match (default is port 80), as well as Qlik Sense proxy (a secondary 'ticket' proxy is shown)
 ![alt text](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/indexjs.png "Index.js")
 
