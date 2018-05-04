@@ -25,4 +25,5 @@ This software is released "AS-IS", but welcome improvements to the base code as 
 ![alt text](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/indexjs.png "Index.js")
 
 5. Qdc-cloudera-beta.js: Config for the Data Explorer UI launched from main page, matches index.js config.
+![alt text](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/qdc_cloudera.png "qdc-cloudera-beta.js")
 
