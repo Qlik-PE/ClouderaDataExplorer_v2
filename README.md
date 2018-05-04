@@ -33,5 +33,6 @@ This software is released "AS-IS", but welcome improvements to the base code as 
 7. Qdc_config.json:  This links CDE to the metadata application used to create Qlik applications dynamically. The appid can be found in QMC.  
 ![alt text](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/qdc_config.png "qdc_config.js")
 
-8. 
+## Usage
+
 
