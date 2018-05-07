@@ -32,6 +32,15 @@ This software is released "AS-IS", but welcome improvements to the base code as 
 7. Qdc_config.json:  This links CDE to the metadata application used to create Qlik applications dynamically. The appid can be found in QMC.  
 ![alt text](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/qdc_config.png "qdc_config.js")
 
-## Usage
-COMING SOON!
+## Setup Metadata Catalog App
+
+1. Download the the app from dropbox [here](https://www.dropbox.com/s/d4h8lm1ig1u8xy1/Cloudera%20Data%20Catalog.qvf?dl=0) 
+
+2. Upload to your QMC
+
+3. There are 3 config connections that need to be mapped to your Cloudera instance.
+
+### Impala:
+- Create / modify an Impala connection to your Cloudera system (proxy/gateway or specific node) in the **Impala SQL Metadata** tab.
+![impala connect](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/impala_connect.png)
 
