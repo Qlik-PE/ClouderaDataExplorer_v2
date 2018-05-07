@@ -49,7 +49,7 @@ This software is released "AS-IS", but welcome improvements to the base code as 
   1. Format for REST: http://52.6.112.39:7187/api/v10/entities/paging?query=((type:database)OR(type:table)OR(type:operation)OR(type:field))&limit=220000&offset=0
   2. Change IP to Navigator, v10 API is good for CDH 5.8+
   3. LIMIT value can be changed based on your Navigator repository count values
-  ![alt text]([https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/navigator_setup.png "navigator setup")
+  ![alt text](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/navigator_setup.png "navigator setup")
 
 ### Cloudera Manager:
 - Create/Modify a connection to Cloudera Manager using the REST connector.
