@@ -41,6 +41,20 @@ This software is released "AS-IS", but welcome improvements to the base code as 
 3. There are 3 config connections that need to be mapped to your Cloudera instance.
 
 ### Impala:
-- Create / modify an Impala connection to your Cloudera system (proxy/gateway or specific node) in the **Impala SQL Metadata** tab.
-![impala connect](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/impala_connect.png)
+- Create / modify an Impala ODBC SQL connection to your Cloudera system (proxy/gateway or specific node) in the **Impala SQL Metadata** tab.
+![impala connect](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/impala_connect.png"impala connect")
+
+### Cloudera Navigator:
+- Create/modify a connection to the Cloudera Navigator using the REST connector.
+  1. Format for REST: http://52.6.112.39:7187/api/v10/entities/paging?query=((type:database)OR(type:table)OR(type:operation)OR(type:field))&limit=220000&offset=0
+  2. Change IP to Navigator, v10 API is good for CDH 5.8+
+  3. LIMIT value can be changed based on your Navigator repository count values
+  ![Navigator]([https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/navigator_setup.png"navigator setup")
+
+### Cloudera Manager:
+- Create/Modify a connection to Cloudera Manager using the REST connector.
+  1. Format for REST: http://52.6.112.39:7180/api/v16/clusters/your_cluster/services/your_impala_service/impalaQueries?filter=(rowsProduced > 1)&from=2016-01-01
+  2. You will need to change "your_cluster" and "your_impala_service" to match your config
+  3. query date should be modified to suite your desired time frame
+ ![Manager](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/manager_setup.png"manager_setup")
 
