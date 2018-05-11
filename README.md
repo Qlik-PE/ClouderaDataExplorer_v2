@@ -58,3 +58,6 @@ This software is released "AS-IS", but welcome improvements to the base code as 
   3. query date should be modified to suite your desired time frame
  ![alt text](https://github.com/Qlik-PE/ClouderaDataExplorer_v2/blob/master/img/manager_setup.png "manager_setup")
 
+# Connecting
+1. Open browser and connect to https://your_sense_server/resources/DataConciergev21/index.html
+2. You may have to login in first to Sense (still testing)...
