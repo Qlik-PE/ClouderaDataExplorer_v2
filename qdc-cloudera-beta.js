@@ -255,6 +255,10 @@ $.ajax({
                 }
             });
 
+            // Selection Bar
+
+
+
             // Filter Handlers
             //show hide Filterbody
             $('#createFilterSection').on('click', function () {
@@ -324,25 +328,21 @@ $.ajax({
             });
 
             $("#show-tags").on('click', function(){
-                
-                //$(".selection-box").each(function(){
-                    $("#tags").toggle();
-                        // Hide Tags
-                        //$(this).removeClass("col-xs-3")
-                        //$(this).addClass("col-xs-4")
-                        //$("#tag-section").hide()
-                    //$("#show-tags").text("Show Tags")
-                    //}
-                    //else{
-                        // Show Tags
-                        //$(this).removeClass("col-xs-4")                        
-                        //$(this).addClass("col-xs-3")
-                        //$("#tag-section").show()
-                        //$("#show-tags").text("Hide Tags")
-                        app.getObject('QV08', tagFilterId);                        
-                    //}
-                //})
+                $("#tags").toggle();
+                app.getObject('QV08', tagFilterId);                        
             });
+
+            //Selections Bar
+            $("#selection-bar-button").on('click', function(){
+                $("#selection-bar").toggle();
+                app.getObject('selection-bar', 'CurrentSelections');
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            })
+
+            $("body").on('click', ".qv-subtoolbar-button", function(){
+                console.log("Hello")
+            })
 
             // Limit Handlers
             $('#Limit').on('click', function () {
@@ -393,7 +393,7 @@ $.ajax({
                     //if (data.RowAmount === '0') {
                         //$('#RowAmount').text("Number of Rows: ");
                     //} else {
-                        $('#RowAmount').text("Number of Rows: " + formatNumber(data.RowAmount));
+                        $('#RowAmount').text("No. Rows: " + formatNumber(data.RowAmount));
                     //}
                 }
             });
@@ -434,6 +434,21 @@ $.ajax({
             $('#remove-selections-tables').on('click', function () {
                 app.field('table_name').clear();
             });
+
+        //    // Popup Database/Table Row Count
+             $('#modalbutton0').on('click', function (event) {
+             //insert modal popup
+                 console.log('duh');
+                 app.getObject('test','PFVjYuV')
+                 });
+                 
+                 
+        //    // Popup Table / Columns Distinct
+             $('#modalbutton1').on('click', function (event) {
+                //insert modal popup
+                  console.log('duh');
+                 app.getObject('test','QjxaQZ')
+                }); 
 
             // Remove column selections
             $('#remove-selections-cols').on('click', function () {

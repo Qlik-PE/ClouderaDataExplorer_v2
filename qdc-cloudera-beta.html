@@ -16,7 +16,7 @@
     <link href="css/wizard.css" rel="stylesheet" />
     <link href="css/effect.css" rel="stylesheet" />
     <link href="css/style-beta.css" rel="stylesheet" />
-    <link href="css/tree-beta.css" rel="stylesheet" />    
+    <link href="css/tree-beta.css" rel="stylesheet" />
     <script src="js/clipboard.min.js"></script>
     <script src="/resources/assets/external/requirejs/require.js"></script>
     <script src="qdc-cloudera-beta.js"></script>
@@ -27,6 +27,8 @@
 
 <body>
     <div class="navbar navbar-default navbar-static-top">
+            <div id="selection-bar" style="display:none;">
+                </div>
         <div class="container-fluid" style="padding-left:12.5%; padding-right: 12.5%;">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
@@ -38,7 +40,7 @@
                 <a class="navbar-brand">
                     <img height="20" alt="Brand" src="img/logo_Qlik.png">
                 </a>
-               <!-- <img src="img/ConsumeConciergeDataMini_Icon.png" style="max-height:25px; margin-top:12px;" /> -->
+                <!-- <img src="img/ConsumeConciergeDataMini_Icon.png" style="max-height:25px; margin-top:12px;" /> -->
 
             </div>
             <div class="collapse navbar-collapse" id="navbar-ex-collapse">
@@ -50,6 +52,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
     <section>
         <div class="row">
@@ -63,7 +66,7 @@
                                 </div>
                             </div>
                         </div>
-                        <li class="active">
+                        <li class="stepping-stone active">
                             <a href="#Datacon" id="seldatacon" title="">
                                 <span class="round-tabs one">
                                     <i class="glyphicon glyphicon-globe"></i>
@@ -71,14 +74,14 @@
                             </a>
                         </li>
 
-                        <li>
+                        <li class="stepping-stone">
                             <a href="#Table" id="seltable" title="">
                                 <span class="round-tabs two">
                                     <i class="glyphicon glyphicon-th-list"></i>
                                 </span>
                             </a>
                         </li>
-                        <li>
+                        <li class="stepping-stone">
                             <a href="#Script" id="createscript" title="">
                                 <span class="round-tabs three">
                                     <i class="glyphicon glyphicon-pencil"></i>
@@ -86,7 +89,7 @@
                             </a>
                         </li>
 
-                        <li>
+                        <li class="stepping-stone">
                             <a href="#Reload" id="reloaddata" title="">
                                 <span class="round-tabs four">
                                     <i class="glyphicon glyphicon-cloud-download"></i>
@@ -123,7 +126,9 @@
                             </div> -->
                             <div id="DataCon1">
                                 <div class="row" style="padding:50px 30px 50px 30px; text-align:center;">
-                                    <h2><span class="glyphicon glyphicon-globe"></span> </h2>
+                                    <h2>
+                                        <span class="glyphicon glyphicon-globe"></span>
+                                    </h2>
                                     <h4 class="timeline-title">
                                         Choose your Cloudera Connection
                                     </h4>
@@ -132,7 +137,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row" style="margin:30px 30px 30px 30px;">                                    
+                            <div class="row" style="margin:30px 30px 30px 30px;">
                                 <button id="PickDataCon" type="button" class="btn btn-primary disabled" disabled="true" style="float:right;">
                                     <span style="margin-right:10px;" class="glyphicon glyphicon-ok"></span>Apply Data Connection</button>
                             </div>
@@ -189,15 +194,18 @@
                             </div> -->
                             <div>
                                 <div class="row" style="border-bottom: solid 1px #ddd; padding:0px 20px 0px 20px;">
+                                    <div style="padding-top: 20px; text-align: center;">
+                                        <span id="RowAmount"></span>
+                                    </div>
                                     <div class="col-xs-12 selbody flex-container">
                                         <div class="col-xs-4 selection-box" style="padding: 0px" id="database-section">
                                             <div class="outer-container">
                                                 <div class="select-container" id="select-container-database">
                                                     <span class="glyphicon glyphicon-hdd custom-icon"></span>
-                                                    <p class="select-container-text"> Choose from 
+                                                    <p class="select-container-text"> Choose from
                                                         <span class="Info-information" id="DBAmount"></span>
-                                                    databases
-                                                    </p>                                                    
+                                                        databases
+                                                    </p>
                                                     <div>
                                                         <div>
                                                             <div class="col-sm-12 qlikobjectcontainer">
@@ -238,7 +246,35 @@
                                                             <div class="col-sm-12 qlikobjectcontainer">
                                                                 <div class="qvobject filter" id="QV02"></div>
                                                                 <div id="remove-selections-div">
-                                                                    <button type="button" id="remove-selections-tables" class="btn btn-light btn-light-tables remove-selections">Remove Selections</button>
+                                                                        <div class="btn-group btn-group-cols" role="group" aria-label="Basic example">
+                                                                    <button type="button" id="remove-selections-tables" class="btn btn-light btn-light-tables remove-selections">Remove All</button>
+                                                                        <!-- Trigger the modal with a button -->
+                                                                        <button id="modalbutton0" type="button" class="btn btn-light btn-light-tables remove-selections" data-toggle="modal" data-target="#myModal">
+                                                                            <span><img src="https://findicons.com/files/icons/1676/primo/128/chart_bar.png" height="15px">View</span>
+                                                                          
+                                                                        </button>
+
+                                                                        <!-- Modal -->
+                                                                        <div id="myModal" class="modal fade" role="dialog">
+                                                                        <div class="modal-dialog">
+
+                                                                            <!-- Modal content-->
+                                                                            <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                <h4 class="modal-title">Distribution Jitter</h4>
+                                                                            </div>
+                                                                            <div class="modal-body" style="height:400px">
+                                                                                <div id="test"  style="height:400px"></div>
+                                                                                  
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        </div>
+                                                                        </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -266,7 +302,7 @@
                                             <div class="outer-container">
                                                 <div class='select-container' id='select-container-column'>
                                                     <span class="glyphicon glyphicon-list custom-icon"></span>
-                                                    <p class="select-container-text">Choose from 
+                                                    <p class="select-container-text">Choose from
                                                         <span class="Info-information" id="ColAmount"></span>
                                                         columns
                                                     </p>
@@ -281,8 +317,35 @@
                                                                     <button type="button" id="btn-QV03" class="btn btn-light-cols">Add all possible</button>
                                                                 </div> -->
                                                                 <div class="btn-group btn-group-cols" role="group" aria-label="Basic example">
-                                                                        <button type="button" class="btn btn-light btn-light-cols remove-selections" id="remove-selections-cols">Remove Selections</button>
-                                                                        <button type="button" id="add-all-possible-btn" class="btn btn-light btn-light-cols">Add All Possible</button>
+                                                                    <button type="button" class="btn btn-light btn-light-cols remove-selections" id="remove-selections-cols">Remove All</button>
+                                                                    <button type="button" id="add-all-possible-btn" class="btn btn-light btn-light-cols">Add Possible</button>
+                                                                      <!-- Trigger the modal with a button -->
+                                                                      <button id="modalbutton1" type="button" class="btn btn-light btn-light-cols remove-selections" data-toggle="modal" data-target="#myModal">
+                                                                            <span><img src="https://findicons.com/files/icons/1676/primo/128/chart_bar.png" height="15px">View</span>
+                                                                          
+                                                                        </button>
+
+                                                                        <!-- Modal -->
+                                                                        <div id="myModal" class="modal fade" role="dialog">
+                                                                        <div class="modal-dialog">
+
+                                                                            <!-- Modal content-->
+                                                                            <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                <h4 class="modal-title">Distribution Jitter</h4>
+                                                                            </div>
+                                                                            <div class="modal-body" style="height:400px">
+                                                                                <div id="test"  style="height:400px"></div>
+                                                                                  
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -321,7 +384,7 @@
                                         </div>
                                     </div>
 
-                                    <div id="Filterbody" style="display: none;">
+                                    <div id="Filterbody" style="display:none;">
                                         <div class="col-xs-12">
                                             <div class="filterbody">
                                                 <span id="closeFilterbody" class="glyphicon glyphicon-remove"></span>
@@ -359,18 +422,22 @@
                                                                 </div>
                                                             </td>
                                                             <td id="filter-row-col-1">
-                                                                    <div class="filter-col-fields">
+                                                                <div class="filter-col-fields">
 
-                                                                    </div>
-                                                                </td>
+                                                                </div>
+                                                            </td>
                                                             <td id="filter-row-option-1">
                                                                 <select class="selectpicker">
                                                                     <option> > </option>
-                                                                    <option> < </option>
-                                                                    <option> = </option>
-                                                                    <option> >= </option>
-                                                                    <option> <= </option>
-                                                                    <option> <> </option>
+                                                                    <option>
+                                                                        < </option>
+                                                                            <option> = </option>
+                                                                            <option> >= </option>
+                                                                            <option>
+                                                                                <=< /option>
+                                                                                    <option>
+                                                                                        <>
+                                                                                    </option>
                                                                 </select>
                                                             </td>
                                                             <td id="filter-row-input-1">
@@ -392,27 +459,29 @@
                                 </div>
                                 <div class="row" style="margin:30px 30px 30px 30px;">
                                     <div class="dropup" style="float:left; margin-right: 12px">
-                                        <button class="btn btn-primary dropdown-toggle" id="bookmark-btn" type="button" data-toggle="dropdown">select Bookmarks
-                                        <span class="caret"></span></button>
-                                        <ul id="qbmlist" class="dropdown-menu  scrollable-menu"></ul>                                                
+                                        <button class="btn btn-primary dropdown-toggle" id="bookmark-btn" type="button" data-toggle="dropdown">
+                                            <span style="margin-right:10px;" class="glyphicon glyphicon-bookmark"></span>Bookmarks
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul id="qbmlist" class="dropdown-menu  scrollable-menu"></ul>
                                     </div>
                                     <button id="createFilterSection" type="button" class="btn btn-primary" style="float:left; width:100px">
                                         <span style="margin-right:10px;" class="glyphicon glyphicon-filter"></span>Filter</button>
                                     <button id="Limit" type="button" class="btn btn-primary" style="float:left; width:100px; margin-left:12px;">
                                         <span style="margin-right:10px;" class="glyphicon glyphicon-dashboard"></span>Limit</button>
+                                    <button id="selection-bar-button" type="button" class="btn btn-primary" style="float:left; width:150px; margin-left:12px;">
+                                        <span style="margin-right:10px;" class="glyphicon glyphicon-search"></span>Search</button>
                                     <button id="show-tags" type="button" class="btn btn-primary" style="float:left; width:125px; margin-left:12px;">
                                         <span style="margin-right:10px;" class="glyphicon glyphicon-filter"></span>Tags</button>
+
                                     <div id="tags" class="qlikobjectcontainer" style="display:none;">
                                         <div class="qvobject filter" id="QV08" display=></div>
                                     </div>
-                                    
+
                                     <button id="CreateScript" type="button" class="btn btn-primary" style="margin-left:12px; float:right;">
                                         <span style="margin-right:10px;" class="glyphicon glyphicon-ok"></span>Create Script</button>
                                     <button id="AddScriptEntry" type="button" class="btn btn-primary" style="margin-left:12px; float:right;">
                                         <span style="margin-right:10px;" class="glyphicon glyphicon-plus"></span>Add Table</button>
-                                    <div>
-                                        <span id="RowAmount"></span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -465,7 +534,7 @@
                         </div>
                     </div>
 
-                
+
 
                     <div class="tab-pane fade" id="Reload">
                         <div class="container-fluid">
@@ -502,19 +571,19 @@
                                         <div class="row">
                                             <div class="col-xs-4">
                                                 <div class="well no-padding" id="tree-container">
-                                                        <div>
-                                                            <ul class="nav nav-list nav-menu-list-style">
-                                                                <li>
-                                                                    <label id="tree-root" class="tree-toggle nav-header glyphicon-icon-rpad">
-                                                                        <span id="infodatacon">
-                                                                            <!-- Data Connection Shown here -->
-                                                                        </span>
-                                                                        <span class="menu-collapsible-icon glyphicon glyphicon-chevron-down"></span>
-                                                                    </label>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+                                                    <div>
+                                                        <ul class="nav nav-list nav-menu-list-style">
+                                                            <li>
+                                                                <label id="tree-root" class="tree-toggle nav-header glyphicon-icon-rpad">
+                                                                    <span id="infodatacon">
+                                                                        <!-- Data Connection Shown here -->
+                                                                    </span>
+                                                                    <span class="menu-collapsible-icon glyphicon glyphicon-chevron-down"></span>
+                                                                </label>
+                                                            </li>
+                                                        </ul>
                                                     </div>
+                                                </div>
                                             </div>
                                             <div class="col-xs-8">
                                                 <h3 id="summary-title">Table Summary</h3>
@@ -530,7 +599,7 @@
                                                     </div>
                                                     <div class="col-xs-3">
                                                         <div id="KPI4" style="padding-top: 20px; height:100px; width:100%; display: none;"></div>
-                                                    </div>                                                    
+                                                    </div>
                                                 </div>
                                                 <div id="QVINFO" style="padding-top: 20px; height:400px; width:100%;"></div>
                                             </div>
