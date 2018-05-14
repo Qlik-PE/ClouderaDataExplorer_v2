@@ -73,7 +73,7 @@ body::-webkit-scrollbar {
 }
 
 .navbar-default {
-    z-index: 0 !important;
+    z-index: 2 !important;
     background-color: #9FA1A4 !important;
     -webkit-box-shadow: -2px -2px 22px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: -2px -2px 22px -1px rgba(0,0,0,0.75);
