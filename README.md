@@ -3,6 +3,7 @@ Bardess coded updated build of CDE.
 
 ## The Cloudera Data Explorer is an Qlik API & Cloudera metadata powered data lake browser for exploratory ad-hoc analytics.
 
+### Now with Video!
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/uJTX7VGoLJQ/0.jpg)](http://www.youtube.com/watch?v=uJTX7VGoLJQ)
 
 This is the "GA" of the Cloudera Data Explorer based off the Data Concierge platform developed by Dennis Jaskowiak and Qlik DACH SA team.
